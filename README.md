@@ -1,72 +1,75 @@
-# 🧾 Gestion des Clients – Module Lazarus (uClient)
+# 🧾 Gestion des Clients – Application Lazarus
 
 ## 📘 Description
 
-Ce module **`uClient.pas`** est une unité de l’application Lazarus dédiée à la **gestion des clients** dans une base de données MySQL via **ZeosLib (ZQuery)**.  
-Il permet d’effectuer les opérations suivantes :
+Ce projet Lazarus met en œuvre une application de **gestion des clients** connectée à une base de données **MySQL** via **ZeosLib (ZConnection, ZQuery, ZTable)**.  
+L’application est composée de deux unités principales :
+
+- `uClient.pas` → Interface utilisateur (formulaire principal)  
+- `uDM.pas` → Module de données (connexion et opérations CRUD)
+
+---
+
+## 🧩 Modules du projet
+
+### 🔹 1. Module `uClient.pas` – Interface utilisateur
+
+Ce module gère toutes les interactions avec l’utilisateur à travers un formulaire Lazarus (`TFrmClient`).  
+Il permet :
 
 - 🔍 **Rechercher** des clients par nom, prénom ou ville  
 - ➕ **Ajouter** un nouveau client  
-- ✏️ **Éditer** les informations d’un client  
-- 🧩 **Modifier** les données existantes avec validation d’unicité de l’email  
-- ❌ **Supprimer** un client (prévu via le bouton `Supprimer`)  
-- 📋 **Lister** les clients dans un `DBGrid`
+- ✏️ **Éditer** et **modifier** les données existantes  
+- ⚠️ Vérifier l’unicité de l’email avant insertion/modification  
+- 📋 **Lister** les clients dans une grille (`DBGrid`)
+
+#### Principales procédures
+
+| Procédure | Description |
+|------------|-------------|
+| `BtnRechercherClick` | Recherche dynamique par nom, prénom, ville |
+| `FormCreate` | Charge la liste complète des clients au démarrage |
+| `BtnEditerClick` | Charge les infos du client sélectionné dans les champs d’édition |
+| `BtnModifierClick` | Vérifie l’unicité de l’email et met à jour l’enregistrement |
+| `ValiderClick` | Insère un nouveau client après vérification |
+| `NouveauClick` | Réinitialise les champs du formulaire |
 
 ---
 
-## 🧠 Fonctionnalités principales
+### 🔹 2. Module `uDM.pas` – Gestion des données
 
-### 1. Recherche (`BtnRechercherClick`)
-Recherche dynamique sur la table `clients` :
-```sql
-SELECT * FROM clients 
-WHERE CONCAT(nom, prenom, ville) LIKE '%<texte saisi>%';
-```
+Le module `uDM` est un **DataModule** (`TDataModule`) contenant tous les composants de connexion et de gestion des données.
 
-### 2. Chargement initial (`FormCreate`)
-Au démarrage du formulaire, la liste complète des clients est affichée :
-```sql
-SELECT * FROM clients;
-```
-
-### 3. Édition d’un enregistrement (`BtnEditerClick`)
-Charge les informations du client sélectionné dans les champs :
-```pascal
-EdtNom.Text := DM.ZqryClient.FieldByName('nom').AsString;
-```
-
-### 4. Modification (`BtnModifierClick`)
-- Vérifie qu’un autre client n’a pas déjà le même email.  
-- Met à jour les champs `nom`, `prenom`, `email`, `ville` pour l’ID sélectionné.  
-- Recharge la liste à la fin.
-
-### 5. Validation / Insertion (`ValiderClick`)
-Avant insertion, vérifie si l’email existe déjà :
-```sql
-SELECT email FROM clients WHERE email LIKE :email;
-```
-Puis insère :
-```sql
-INSERT INTO clients (nom, prenom, email, ville)
-VALUES (:nom, :prenom, :email, :ville);
-```
-
----
-
-## 🏗️ Composants utilisés
+#### Composants principaux
 
 | Composant | Description |
-|------------|--------------|
-| `TForm` | Fenêtre principale du module |
-| `TButton` | Boutons d’action (Rechercher, Modifier, Valider, etc.) |
-| `TEdit` | Zones de saisie pour les informations client |
-| `TDBGrid` | Affichage de la liste des clients |
-| `TLabel` | Étiquettes descriptives |
-| `TDataModule (uDM)` | Contient la connexion et la requête Zeos (`ZConnection`, `ZQuery`) |
+|------------|-------------|
+| `ZNX: TZConnection` | Connexion à la base MySQL |
+| `ZqryClient: TZQuery` | Requêtes SQL personnalisées |
+| `ZtblClient: TZTable` | Accès direct à la table `clients` |
+| `DSClient, DSZClient` | Sources de données pour le lien avec les composants visuels |
+
+#### Méthodes du module `TDM`
+
+| Méthode | Rôle | Description |
+|----------|------|-------------|
+| `Ajouter_Client()` | Insertion | Passe le `TZTable` en mode ajout (`Append`) |
+| `Modifier_Client()` | Édition | Passe le `TZTable` en mode modification (`Edit`) |
+| `Supprimer_Client()` | Suppression | Supprime l’enregistrement courant si non vide |
+| `Annuler_Client()` | Annulation | Annule les changements en cours (`Cancel`) |
+| `Valider_Client()` | Validation | Enregistre les changements (`Post`) et gère les erreurs |
+
+Chaque méthode renvoie un **booléen** (`True` ou `False`) selon le succès de l’opération.
+
+Exemple d’utilisation dans le code :  
+```pascal
+if DM.Ajouter_Client then
+  ShowMessage('Nouveau client ajouté avec succès !');
+```
 
 ---
 
-## 🗃️ Base de données
+## 🗃️ Structure de la base de données
 
 **Table : `clients`**
 
@@ -81,40 +84,39 @@ VALUES (:nom, :prenom, :email, :ville);
 
 ---
 
-## ⚙️ Pré-requis
+## ⚙️ Pré-requis techniques
 
-- **Lazarus IDE**
-- **Free Pascal Compiler (FPC)**
-- **Composants ZeosLib** (ZConnection, ZQuery)
-- Base de données **MySQL / MariaDB**
+- **Lazarus IDE** (version récente)  
+- **Free Pascal Compiler (FPC)**  
+- **ZeosLib** installée (`ZConnection`, `ZQuery`, `ZTable`)  
+- Serveur **MySQL / MariaDB** accessible
 
 ---
 
-## 🚀 Installation & Exécution
+## 🚀 Installation & exécution
 
 1. Ouvre le projet Lazarus.
-2. Vérifie que l’unité `uDM` contient une connexion `ZConnection` valide vers ta base MySQL.
+2. Vérifie les paramètres de `ZNX` dans `uDM.pas` : hôte, utilisateur, mot de passe, base.
 3. Compile et exécute le projet.
-4. Le formulaire `TFrmClient` permet alors de :
-   - Ajouter un client
-   - Modifier / Rechercher
-   - Afficher la liste complète
+4. L’interface `TFrmClient` permet alors de :
+   - Ajouter, modifier, supprimer des clients  
+   - Rechercher par texte  
+   - Visualiser les données via le `DBGrid`
 
 ---
 
-## 🧩 Améliorations possibles
+## 🧠 Bonnes pratiques et améliorations possibles
 
-- Ajouter la suppression (`DELETE FROM clients WHERE id = :id`)
-- Gérer les exceptions SQL (try/except)
-- Séparer la logique métier dans une classe ou un contrôleur
-- Ajouter des validations plus avancées (email, champ vide)
-- Intégrer un message toast ou un label de notification au lieu de `ShowMessage`
+- Ajouter la suppression SQL manuelle (`DELETE FROM clients WHERE id = :id`)
+- Centraliser les requêtes SQL dans le DataModule
+- Gérer les exceptions SQL avec `try/except` et journalisation
+- Ajouter des validations de saisie (email valide, champs obligatoires)
+- Utiliser des messages “toast” ou labels colorés pour les notifications
 
 ---
 
 ## 👨‍💻 Auteur
 
 **Projet Lazarus – Gestion des Clients**  
-Développé par Ait Larail Hassan
-Formateur Chez IPCIG : Institut Professionnel Centrale D'Informatique et Gestion : Accrédité 
+Développé par Développé par Ait Larail Hassan Formateur Chez IPCIG : Institut Professionnel Centrale D'Informatique et Gestion : Accrédité  
 © 2025
