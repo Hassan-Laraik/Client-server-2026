@@ -1,0 +1,276 @@
+object FrmPrinciale: TFrmPrinciale
+  Left = 131
+  Height = 534
+  Top = 131
+  Width = 986
+  Caption = 'Principale'
+  ClientHeight = 534
+  ClientWidth = 986
+  LCLVersion = '4.2.0.0'
+  OnCreate = FormCreate
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 318
+    Top = 216
+    Width = 986
+    Align = alClient
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = DM.DSClient
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 986
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 986
+    TabOrder = 1
+    object BtnNouveau: TButton
+      Left = 1
+      Height = 48
+      Top = 1
+      Width = 137
+      Align = alLeft
+      Caption = 'Nouveau'
+      TabOrder = 0
+      OnClick = BtnNouveauClick
+    end
+    object BtnModifier: TButton
+      Left = 138
+      Height = 48
+      Top = 1
+      Width = 137
+      Align = alLeft
+      Caption = 'Modifier'
+      TabOrder = 1
+      OnClick = BtnModifierClick
+    end
+    object BtnSuprimer: TButton
+      Left = 275
+      Height = 48
+      Top = 1
+      Width = 137
+      Align = alLeft
+      Caption = 'Supprimer'
+      TabOrder = 2
+      OnClick = BtnSuprimerClick
+    end
+    object BtnAnnuler: TButton
+      Left = 412
+      Height = 48
+      Top = 1
+      Width = 137
+      Align = alLeft
+      Caption = 'Annuler'
+      TabOrder = 3
+      OnClick = BtnAnnulerClick
+    end
+    object BtnValider: TButton
+      Left = 549
+      Height = 48
+      Top = 1
+      Width = 137
+      Align = alLeft
+      Caption = 'Valider'
+      TabOrder = 4
+      OnClick = BtnValiderClick
+    end
+    object EdtRechercher: TEdit
+      Left = 696
+      Height = 48
+      Top = 1
+      Width = 180
+      Align = alClient
+      BorderSpacing.Left = 10
+      TabOrder = 5
+      OnChange = EdtRechercherChange
+    end
+    object BtnRechercher: TButton
+      Left = 876
+      Height = 48
+      Top = 1
+      Width = 99
+      Align = alRight
+      BorderSpacing.Right = 10
+      Caption = 'Rechercher'
+      TabOrder = 6
+      OnClick = BtnRechercherClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 166
+    Top = 50
+    Width = 986
+    Align = alTop
+    Caption = 'Panel2'
+    ClientHeight = 166
+    ClientWidth = 986
+    TabOrder = 2
+    object Label1: TLabel
+      Left = 36
+      Height = 18
+      Top = 22
+      Width = 14
+      Caption = 'ID'
+    end
+    object DbedtID: TDBEdit
+      Left = 104
+      Height = 35
+      Top = 16
+      Width = 232
+      DataField = 'id'
+      DataSource = DM.DSClient
+      ReadOnly = True
+      Alignment = taRightJustify
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      Left = 36
+      Height = 18
+      Top = 70
+      Width = 32
+      Caption = 'Nom'
+    end
+    object DbedtNom: TDBEdit
+      Left = 104
+      Height = 35
+      Top = 64
+      Width = 232
+      DataField = 'nom'
+      DataSource = DM.DSClient
+      MaxLength = 100
+      TabOrder = 1
+    end
+    object Label3: TLabel
+      Left = 32
+      Height = 18
+      Top = 118
+      Width = 53
+      Caption = 'Prenom'
+    end
+    object DbedtPrenom: TDBEdit
+      Left = 100
+      Height = 35
+      Top = 112
+      Width = 236
+      DataField = 'prenom'
+      DataSource = DM.DSClient
+      MaxLength = 40
+      TabOrder = 2
+    end
+    object Label5: TLabel
+      Left = 392
+      Height = 18
+      Top = 24
+      Width = 59
+      Caption = 'Inscrit Le'
+    end
+    object DbedtAdresse: TDBEdit
+      Left = 476
+      Height = 35
+      Top = 64
+      Width = 452
+      DataField = 'adrese'
+      DataSource = DM.DSClient
+      MaxLength = 200
+      TabOrder = 3
+    end
+    object DbDateInscrit: TDBDateEdit
+      Left = 476
+      Height = 35
+      Top = 16
+      Width = 172
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      MaxLength = 0
+      TabOrder = 4
+      DataField = 'inscrit'
+      DataSource = DM.DSClient
+    end
+    object DBCMBXVile: TDBComboBox
+      Left = 736
+      Height = 35
+      Top = 16
+      Width = 172
+      DataField = 'ville'
+      DataSource = DM.DSClient
+      ItemHeight = 0
+      Items.Strings = (
+        'Agadir'
+        'Ahfir'
+        'Aïn Harrouda'
+        'Al Hoceïma'
+        'Asilah'
+        'Azemmour'
+        'Azrou'
+        'Beni Mellal'
+        'Berkane'
+        'Berrechid'
+        'Bouarfa'
+        'Boujad'
+        'Casablanca'
+        'Chefchaouen'
+        'Dakhla'
+        'Demnate'
+        'El Hajeb'
+        'El Jadida'
+        'Errachidia'
+        'Essaouira'
+        'Fès'
+        'Fquih Ben Salah'
+        'Guelmim'
+        'Guercif'
+        'Ifrane'
+        'Imouzzer Kandar'
+        'Inzegane'
+        'Jerada'
+        'Kasba Tadla'
+        'Kénitra'
+        'Khémisset'
+        'Khénifra'
+        'Khouribga'
+        'Ksar El Kebir'
+        'Laâyoune'
+        'Larache'
+        'Marrakech'
+        'Martil'
+        'Meknès'
+        'Midelt'
+        'Mohammedia'
+        'Nador'
+        'Ouarzazate'
+        'Ouezzane'
+        'Oujda'
+        'Rabat'
+        'Safi'
+        'Salé'
+        'Settat'
+        'Tanger'
+      )
+      MaxLength = 0
+      TabOrder = 5
+    end
+    object Label6: TLabel
+      Left = 392
+      Height = 18
+      Top = 72
+      Width = 53
+      Caption = 'Adresse'
+    end
+    object Label7: TLabel
+      Left = 672
+      Height = 18
+      Top = 24
+      Width = 30
+      Caption = 'Ville'
+    end
+  end
+end

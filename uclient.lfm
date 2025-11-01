@@ -1,0 +1,153 @@
+object FrmClient: TFrmClient
+  Left = 202
+  Height = 515
+  Top = 93
+  Width = 997
+  Caption = 'FrmClient'
+  ClientHeight = 515
+  ClientWidth = 997
+  LCLVersion = '4.2.0.0'
+  OnCreate = FormCreate
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 364
+    Top = 151
+    Width = 997
+    Align = alBottom
+    AutoFillColumns = True
+    Color = clWindow
+    Columns = <>
+    DataSource = DM.DSZClient
+    TabOrder = 0
+  end
+  object EdtRecherchr: TEdit
+    Left = 280
+    Height = 35
+    Top = 16
+    Width = 480
+    TabOrder = 1
+  end
+  object BtnRechercher: TButton
+    Left = 776
+    Height = 25
+    Top = 24
+    Width = 75
+    Caption = 'Rechercher'
+    TabOrder = 2
+    OnClick = BtnRechercherClick
+  end
+  object EdtNom: TEdit
+    Left = 279
+    Height = 35
+    Top = 70
+    Width = 329
+    TabOrder = 3
+  end
+  object EdtPrenom: TEdit
+    Left = 280
+    Height = 35
+    Top = 120
+    Width = 329
+    TabOrder = 4
+  end
+  object EdtEmail: TEdit
+    Left = 280
+    Height = 35
+    Top = 168
+    Width = 329
+    TabOrder = 5
+  end
+  object EdtAdresse: TEdit
+    Left = 280
+    Height = 35
+    Top = 224
+    Width = 329
+    TabOrder = 6
+  end
+  object EdtVille: TEdit
+    Left = 280
+    Height = 35
+    Top = 272
+    Width = 329
+    TabOrder = 7
+  end
+  object Label1: TLabel
+    Left = 144
+    Height = 18
+    Top = 80
+    Width = 32
+    Caption = 'Nom'
+  end
+  object Label2: TLabel
+    Left = 152
+    Height = 18
+    Top = 128
+    Width = 53
+    Caption = 'Prenom'
+  end
+  object Label3: TLabel
+    Left = 144
+    Height = 18
+    Top = 184
+    Width = 37
+    Caption = 'Email'
+  end
+  object Label4: TLabel
+    Left = 144
+    Height = 18
+    Top = 232
+    Width = 53
+    Caption = 'Adresse'
+  end
+  object Label5: TLabel
+    Left = 144
+    Height = 18
+    Top = 272
+    Width = 30
+    Caption = 'Ville'
+  end
+  object Nouveau: TButton
+    Left = 707
+    Height = 40
+    Top = 80
+    Width = 158
+    Caption = 'Nouveau'
+    TabOrder = 8
+    OnClick = NouveauClick
+  end
+  object BtnEditer: TButton
+    Left = 707
+    Height = 39
+    Top = 129
+    Width = 158
+    Caption = 'Editer'
+    TabOrder = 9
+    OnClick = BtnEditerClick
+  end
+  object Valider: TButton
+    Left = 880
+    Height = 40
+    Top = 80
+    Width = 158
+    Caption = 'Valider'
+    TabOrder = 10
+    OnClick = ValiderClick
+  end
+  object Supprimer: TButton
+    Left = 704
+    Height = 26
+    Top = 288
+    Width = 158
+    Caption = 'Supprimer'
+    TabOrder = 11
+  end
+  object BtnModifier: TButton
+    Left = 880
+    Height = 39
+    Top = 129
+    Width = 153
+    Caption = 'Modifier'
+    TabOrder = 12
+    OnClick = BtnModifierClick
+  end
+end

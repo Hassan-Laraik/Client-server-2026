@@ -1,0 +1,49 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 347
+  HorizontalOffset = 555
+  VerticalOffset = 219
+  Width = 413
+  object ZNX: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    Connected = True
+    DisableSavepoints = False
+    HostName = 'localhost'
+    Port = 0
+    Database = 'facturation'
+    User = 'root'
+    Password = '12345'
+    Protocol = 'mysql'
+    Left = 40
+    Top = 8
+  end
+  object ZtblClient: TZTable
+    Connection = ZNX
+    Active = True
+    TableName = 'clients'
+    Left = 40
+    Top = 88
+  end
+  object DSClient: TDataSource
+    DataSet = ZtblClient
+    Left = 40
+    Top = 160
+  end
+  object ZqryClient: TZQuery
+    Connection = ZNX
+    SQL.Strings = (
+      'select *  from  clients'
+    )
+    Params = <>
+    Left = 352
+    Top = 24
+  end
+  object DSZClient: TDataSource
+    DataSet = ZqryClient
+    Left = 360
+    Top = 104
+  end
+end

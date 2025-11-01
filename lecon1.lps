@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="lecon1.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="21" Y="13"/>
+        <UsageCount Value="40"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uprincipale.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmPrinciale"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uPrincipale"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="82"/>
+        <CursorPos X="40" Y="89"/>
+        <UsageCount Value="40"/>
+      </Unit>
+      <Unit>
+        <Filename Value="DataModule/udm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="DM"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="uDM"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="71"/>
+        <CursorPos X="22" Y="91"/>
+        <UsageCount Value="30"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uclient.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FrmClient"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uClient"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="111"/>
+        <CursorPos X="38" Y="127"/>
+        <UsageCount Value="29"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="../../.lazarus/onlinepackagemanager/packages/zeosdbo/src/component/ZAbstractDataset.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="741"/>
+        <CursorPos Y="752"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="DataModule/udm.pas"/>
+        <Caret Line="94" Column="35" TopLine="88"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="22" Column="52" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="39" Column="3" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="40" Column="3" TopLine="28"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="41" Column="3" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="42" Column="3" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="43" Column="3" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="44" Column="3" TopLine="32"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="45" Column="3" TopLine="33"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="46" Column="3" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="47" Column="3" TopLine="35"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="48" Column="3" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="49" Column="3" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="50" Column="3" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="51" Column="3" TopLine="39"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="52" Column="3" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="54" Column="3" TopLine="42"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="60" Column="41" TopLine="49"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="77" Column="24" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="76" Column="48" TopLine="62"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="88" Column="24" TopLine="71"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="84" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="91" Column="89" TopLine="82"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="93" Column="36" TopLine="82"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="86" Column="52" TopLine="85"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="93" Column="52" TopLine="92"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="96" Column="85" TopLine="46"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="95" Column="49" TopLine="79"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="126" TopLine="94"/>
+      </Position>
+      <Position>
+        <Filename Value="uclient.pas"/>
+        <Caret Line="83" Column="15" TopLine="94"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>
