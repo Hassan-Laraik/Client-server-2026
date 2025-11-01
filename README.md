@@ -115,5 +115,6 @@ VALUES (:nom, :prenom, :email, :ville);
 ## 👨‍💻 Auteur
 
 **Projet Lazarus – Gestion des Clients**  
-Développé par [Ton Nom ou Institut]  
+Développé par Ait Larail Hassan
+Formateur Chez IPCIG : Institut Professionnel Centrale D'Informatique et Gestion : Accrédité 
 © 2025
